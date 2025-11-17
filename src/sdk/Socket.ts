@@ -42,9 +42,12 @@ export type SocketResponseType<T = any> = {
 
 export class Socket {
   private ws: WebSocket;
-  private onmessage: ((response: SocketResponseType<any>) => void) | null;
+  private onmessage:
+    | ((response: SocketResponseType<any>) => void)
+    | null
+    | undefined;
 
-  constructor(private readonly url: string) {
+  constructor(readonly url: string) {
     const fullURL = this.buildURL(this.url);
     this.ws = new WebSocket(fullURL);
   }
@@ -102,7 +105,7 @@ export class Socket {
     // }
   }
 
-  private buildURL(url: string): string {
+  buildURL(url: string): string {
     if (url.startsWith('ws://') || url.startsWith('wss://')) {
       return url;
     }

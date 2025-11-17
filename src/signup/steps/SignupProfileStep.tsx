@@ -56,7 +56,7 @@ export const SignupProfileStep = () => {
       <div className="flex w-full items-center justify-center">
         <InputAvatar
           value={data.image}
-          onAvatarChange={(url) => {
+          onAvatarChange={(url: string) => {
             setData({ ...data, image: url });
           }}
         />

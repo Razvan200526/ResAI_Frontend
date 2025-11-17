@@ -1,6 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.5/schema.json",
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "$schema": "https://biomejs.dev/schemas/2.3.6/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -33,12 +39,13 @@
         // "noArrayIndexKey": "off",
         "noConsole": {
           "level": "error",
-          "options": { "allow": ["assert", "error", "info", "warn", "debug"] }
+          "options": {
+            "allow": ["assert", "error", "info", "warn", "debug"]
+          }
         },
         "noArrayIndexKey": "off",
         "noControlCharactersInRegex": "off"
       },
-
       "complexity": {
         // "noStaticOnlyClass": "off",
         // "noUselessConstructor": "off",

@@ -19,7 +19,7 @@ export class Backend {
   public readonly chat: ChatFetcher;
   public readonly apps: ApplicationFetcher;
   public readonly socket: Socket;
-  constructor(private readonly fetcher: Fetcher) {
+  constructor(readonly fetcher: Fetcher) {
     this.auth = new AuthFetcher(this.fetcher);
     this.users = new UserFetcher(this.fetcher);
     this.upload = new UploadFetcher(this.fetcher);

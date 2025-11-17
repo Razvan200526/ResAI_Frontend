@@ -6,17 +6,17 @@
     "module": "ESNext",
     "types": ["node"],
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-
+    "baseUrl": ".",
     "paths": {
-      "@frontend": ["./src"],
-      "@common": ["./src/common"]
+      "@frontend": ["src/*"],
+      "@common": ["src/common/*"],
+      "@sdk": ["src/sdk/*"]
     },
     /* Linting */
     "strict": true,

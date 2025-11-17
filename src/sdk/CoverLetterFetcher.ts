@@ -10,7 +10,7 @@ import type {
 } from './types';
 
 export class CoverLetterFetcher {
-  constructor(private readonly fetcher: Fetcher) {}
+  constructor(readonly fetcher: Fetcher) {}
 
   public readonly coverletter = {
     retrieve: async (payload: { userId: string }): Promise<ResponseType> => {

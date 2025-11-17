@@ -1,8 +1,8 @@
-import { Button } from '@common/components/button';
-import { Input } from '@common/components/input';
-import { Modal, type ModalRefType } from '@common/components/Modal';
-import { Toast } from '@common/components/toast';
-import { H4 } from '@common/components/typography';
+import { Button } from '@frontend/common/components/button';
+import { Input } from '@frontend/common/components/input';
+import { Modal, type ModalRefType } from '@frontend/common/components/Modal';
+import { Toast } from '@frontend/common/components/toast';
+import { H4 } from '@frontend/common/components/typography';
 import { useAuth } from '@frontend/shared/hooks';
 import { PlusIcon } from '@heroicons/react/24/outline';
 import { Select, SelectItem } from '@heroui/react';
@@ -110,14 +110,18 @@ export const CreateApplicationButton = () => {
                 label="Company Name"
                 placeholder="Enter company name"
                 value={formData.employer}
-                onValueChange={(value) => handleInputChange('employer', value)}
+                onValueChange={(value: any) =>
+                  handleInputChange('employer', value)
+                }
                 isRequired
               />
               <Input
                 label="Job Title"
                 placeholder="Enter job title"
                 value={formData.jobTitle}
-                onValueChange={(value) => handleInputChange('jobTitle', value)}
+                onValueChange={(value: any) =>
+                  handleInputChange('jobTitle', value)
+                }
                 isRequired
               />
             </div>
@@ -127,14 +131,16 @@ export const CreateApplicationButton = () => {
                 label="Location"
                 placeholder="Enter job location"
                 value={formData.location}
-                onValueChange={(value) => handleInputChange('location', value)}
+                onValueChange={(value: any) =>
+                  handleInputChange('location', value)
+                }
                 isRequired
               />
               <Input
                 label="Salary Range"
                 placeholder="e.g. $80,000 - $100,000"
                 value={formData.salaryRange}
-                onValueChange={(value) =>
+                onValueChange={(value: any) =>
                   handleInputChange('salaryRange', value)
                 }
               />
@@ -145,13 +151,17 @@ export const CreateApplicationButton = () => {
                 label="Job URL"
                 placeholder="Link to job posting"
                 value={formData.jobUrl}
-                onValueChange={(value) => handleInputChange('jobUrl', value)}
+                onValueChange={(value: any) =>
+                  handleInputChange('jobUrl', value)
+                }
               />
               <Input
                 label="Contact Person"
                 placeholder="Recruiter or hiring manager"
                 value={formData.contact}
-                onValueChange={(value) => handleInputChange('contact', value)}
+                onValueChange={(value: any) =>
+                  handleInputChange('contact', value)
+                }
               />
             </div>
 

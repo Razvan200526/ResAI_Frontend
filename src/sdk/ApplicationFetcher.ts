@@ -3,7 +3,7 @@ import type { Fetcher } from './Fetcher';
 import type { ResponseType } from './types';
 
 export class ApplicationFetcher {
-  constructor(private readonly fetcher: Fetcher) {}
+  constructor(readonly fetcher: Fetcher) { }
 
   public readonly apps = {
     retrieve: async (payload: { userId: string }) => {

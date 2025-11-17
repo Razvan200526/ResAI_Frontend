@@ -43,15 +43,15 @@ function getSecureRandomBytes(size: number): Uint8Array {
     return buf;
   }
 
-  // Node fallback for older versions
-  try {
-    const nodeCrypto: typeof import('crypto') = require('node:crypto');
-    if (typeof nodeCrypto.randomBytes === 'function') {
-      return new Uint8Array(nodeCrypto.randomBytes(size));
-    }
-  } catch {
-    // ignore, will fall back below
-  }
+  // // Node fallback for older versions
+  // try {
+  //   const nodeCrypto: typeof import('crypto') = require('node:crypto');
+  //   if (typeof nodeCrypto.randomBytes === 'function') {
+  //     return new Uint8Array(nodeCrypto.randomBytes(size));
+  //   }
+  // } catch {
+  //   // ignore, will fall back below
+  // }
 
   // Non-secure fallback as a last resort (avoid in production)
   console.warn(

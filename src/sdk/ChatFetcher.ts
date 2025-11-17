@@ -2,7 +2,7 @@ import type { Fetcher } from './Fetcher';
 import type { ResponseType } from './types';
 
 export class ChatFetcher {
-  constructor(private readonly fetcher: Fetcher) {}
+  constructor(readonly fetcher: Fetcher) {}
 
   public readonly sessions = {
     retrieve: async (payload: { userId: string }): Promise<ResponseType> => {

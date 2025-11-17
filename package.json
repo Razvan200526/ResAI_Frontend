@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "tsc -b && vite build",
-    "fmt" : "bunx @biomejs/biome check --write .",
+    "fmt": "bunx @biomejs/biome check --write .",
     "preview": "vite preview"
   },
   "dependencies": {
