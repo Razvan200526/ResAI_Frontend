@@ -1,34 +1,34 @@
-import { Button } from '@common/components/button';
-import { InputAvatar } from '@common/components/input/InputAvatar';
-import { InputFirstName } from '@common/components/input/InputFirstName';
-import { Toast } from '@common/components/toast';
-import { isNameValid } from '@common/validators/isNameValid';
-import { backend } from '@frontend/shared/backend';
+import { Button } from "@common/components/button";
+import { InputAvatar } from "@common/components/input/InputAvatar";
+import { InputFirstName } from "@common/components/input/InputFirstName";
+import { Toast } from "@common/components/toast";
+import { isNameValid } from "@common/validators/isNameValid";
+import { backend } from "@frontend/shared/backend";
 import {
   ArrowLeftCircleIcon,
   ArrowRightCircleIcon,
-} from '@heroicons/react/24/outline';
-import { Form } from '@heroui/react';
+} from "@heroicons/react/24/outline";
+import { Form } from "@heroui/react";
 
-import { useState } from 'react';
-import { useSignupStore } from '../signUpStore';
+import { useState } from "react";
+import { useSignupStore } from "../signUpStore";
 
 export const SignupProfileStep = () => {
   const { data, setStep, setData } = useSignupStore();
   const [isLoading, setIsLoading] = useState(false);
 
   const goBack = () => {
-    setData({ ...data, password: '' });
+    setData({ ...data, password: "" });
     setStep(1);
   };
 
   const handleSignup = async () => {
     if (!isNameValid(data.firstName)) {
-      Toast.error({ description: 'Enter a valid first name' });
+      Toast.error({ description: "Enter a valid first name" });
       return;
     }
     if (!isNameValid(data.lastName)) {
-      Toast.error({ description: 'Enter a valid last name' });
+      Toast.error({ description: "Enter a valid last name" });
       return;
     }
 
@@ -39,7 +39,7 @@ export const SignupProfileStep = () => {
     if (response.success) {
       setStep(3);
     } else {
-      Toast.error({ description: response.message || 'Signup failed' });
+      Toast.error({ description: response.message || "Signup failed" });
     }
   };
 
@@ -56,7 +56,7 @@ export const SignupProfileStep = () => {
       <div className="flex w-full items-center justify-center">
         <InputAvatar
           value={data.image}
-          onAvatarChange={(url: string) => {
+          onAvatarChange={(url) => {
             setData({ ...data, image: url });
           }}
         />

@@ -21,7 +21,7 @@ export class Fetcher {
         ...config.headers,
       },
     };
-
+    this.config.baseURL = this.buildURL(config.baseURL);
     this.abortController = new AbortController();
   }
 
