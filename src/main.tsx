@@ -1,0 +1,44 @@
+import { QueryClientProvider } from '@tanstack/react-query';
+import { NuqsAdapter } from 'nuqs/adapters/react-router/v7';
+import { StrictMode } from 'react';
+import * as ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router';
+import '@fontsource/rammetto-one/400.css';
+import '@fontsource/montserrat/100.css';
+import '@fontsource/montserrat/200.css';
+import '@fontsource/montserrat/300.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/600.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/montserrat/800.css';
+import '@fontsource/montserrat/900.css';
+import { router } from './__init__/routes';
+import { queryClient } from './shared/QueryClient';
+import './tailwind.css';
+import { ToastProvider } from './common/components/toast';
+import { pe } from './common/utils';
+
+try {
+  const elem = document.getElementById('root');
+  if (!elem) {
+    throw new Error('Root element not found');
+  }
+
+  const root = ReactDOM.createRoot(elem);
+  root.render(
+    <StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <ToastProvider>
+          <NuqsAdapter>
+            <RouterProvider router={router} />
+          </NuqsAdapter>
+        </ToastProvider>
+      </QueryClientProvider>
+    </StrictMode>,
+  );
+} catch (error) {
+  if (error instanceof Error) {
+    console.error(pe.render(error));
+  }
+}

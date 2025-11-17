@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@source ".";
+@plugin "./hero.ts";
+@source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  /* Colors */
+
+  /* Primary: Terracotta/Clay */
+  --color-primary: oklch(55% 0.14 45); /* base */
+  --color-primary-50: oklch(96% 0.015 45);
+  --color-primary-100: oklch(92% 0.03 45);
+  --color-primary-200: oklch(86% 0.06 45);
+  --color-primary-300: oklch(78% 0.09 45);
+  --color-primary-400: oklch(68% 0.12 45);
+  --color-primary-500: oklch(60% 0.14 45);
+  --color-primary-600: oklch(52% 0.15 45);
+  --color-primary-700: oklch(45% 0.14 45);
+  --color-primary-800: oklch(38% 0.12 45);
+  --color-primary-900: oklch(31% 0.1 45);
+  --color-primary-950: oklch(22% 0.07 45);
+
+  /* Secondary: Teal */
+  --color-secondary-text: oklch(56% 0.13 200);
+  --color-secondary: oklch(70% 0.11 200);
+  --color-secondary-50: oklch(96% 0.015 200);
+  --color-secondary-100: oklch(92% 0.03 200);
+  --color-secondary-200: oklch(86% 0.055 200);
+  --color-secondary-300: oklch(78% 0.085 200);
+  --color-secondary-400: oklch(70% 0.11 200);
+  --color-secondary-500: oklch(56% 0.13 200);
+  --color-secondary-600: oklch(49% 0.12 200);
+  --color-secondary-700: oklch(42% 0.11 200);
+  --color-secondary-800: oklch(35% 0.09 200);
+  --color-secondary-900: oklch(28% 0.075 200);
+  --color-secondary-950: oklch(18% 0.05 200);
+
+  /* Neutrals and surfaces (warm off-white) */
+  --color-background: oklch(97% 0.015 80); /* gentle warm paper */
+  --color-background-25: oklch(97% 0.015 80 / 0.25);
+  --color-background-50: oklch(97% 0.015 80 / 0.5);
+  --color-background-100: oklch(97% 0.015 80);
+
+  --color-border: oklch(56% 0.02 80 / 0.22); /* soft warm neutral */
+  --color-border-hover: oklch(70% 0.06 80);
+  --color-hover: oklch(92% 0.03 45 / 0.5); /* tinted hover from primary */
+  --color-muted: oklch(55% 0.015 80);
+  --color-placeholder: var(--color-primary-300);
+
+  /* Light ramp (neutral warm grayscale) */
+  --color-light: oklch(100% 0 0);
+  --color-light-50: oklch(99.6% 0.001 80);
+  --color-light-100: oklch(99.2% 0.002 80);
+  --color-light-200: oklch(92% 0.02 80);
+  --color-light-300: oklch(84% 0.04 80);
+  --color-light-400: oklch(76% 0.06 80);
+  --color-light-500: oklch(68% 0.08 80);
+  --color-light-600: oklch(60% 0.1 80);
+  --color-light-700: oklch(52% 0.12 80);
+  --color-light-800: oklch(44% 0.14 80);
+  --color-light-900: oklch(36% 0.16 80);
+  --color-light-950: oklch(25% 0 0);
+
+  /* Semantics tuned to theme */
+  --color-success: oklch(50% 0.14 145); /* natural green */
+  --color-success-50: oklch(97% 0.02 145);
+  --color-success-100: oklch(93% 0.04 145);
+  --color-success-200: oklch(86% 0.07 145);
+  --color-success-300: oklch(78% 0.1 145);
+  --color-success-400: oklch(70% 0.13 145);
+  --color-success-500: oklch(60% 0.15 145);
+  --color-success-600: oklch(52% 0.16 145);
+  --color-success-700: oklch(46% 0.14 145);
+  --color-success-800: oklch(40% 0.11 145);
+  --color-success-900: oklch(33% 0.09 145);
+  --color-success-950: oklch(20% 0.06 145);
+
+  --color-danger: oklch(48% 0.17 25); /* warm red, distinct from primary */
+  --color-danger-50: oklch(97% 0.02 25);
+  --color-danger-100: oklch(94% 0.04 25);
+  --color-danger-200: oklch(88% 0.08 25);
+  --color-danger-300: oklch(81% 0.12 25);
+  --color-danger-400: oklch(73% 0.15 25);
+  --color-danger-500: oklch(64% 0.18 25);
+  --color-danger-600: oklch(55% 0.2 25);
+  --color-danger-700: oklch(48% 0.17 25);
+  --color-danger-800: oklch(40% 0.14 25);
+  --color-danger-900: oklch(33% 0.11 25);
+  --color-danger-950: oklch(21% 0.07 25);
+
+  /* Feature-specific accents adapted to the theme */
+  --color-resume: oklch(66% 0.09 210); /* cool teal leaning for Resume */
+  --color-resume-50: oklch(96% 0.015 210);
+  --color-resume-100: oklch(93% 0.03 210);
+  --color-resume-200: oklch(87% 0.06 210);
+  --color-resume-300: oklch(79% 0.09 210);
+  --color-resume-400: oklch(68% 0.12 210);
+  --color-resume-500: oklch(57% 0.14 210);
+  --color-resume-600: oklch(48% 0.16 210);
+  --color-resume-700: oklch(43% 0.15 210);
+  --color-resume-800: oklch(36% 0.12 210);
+  --color-resume-900: oklch(29% 0.1 210);
+  --color-resume-950: oklch(23% 0.08 210);
+
+  --color-coverletter: oklch(60% 0.11 70); /* honey/amber accent */
+  --color-coverletter-50: oklch(95% 0.02 70);
+  --color-coverletter-100: oklch(90% 0.04 70);
+  --color-coverletter-200: oklch(80% 0.07 70);
+  --color-coverletter-300: oklch(70% 0.1 70);
+  --color-coverletter-400: oklch(60% 0.11 70);
+
+  --color-chats: oklch(52% 0.18 205); /* azure leaning teal for chats */
+  --color-chats-50: oklch(76% 0.12 205);
+  --color-chats-100: oklch(71% 0.14 205);
+  --color-chats-200: oklch(64% 0.16 205);
+  --color-chats-300: oklch(56% 0.18 205);
+  --color-chats-400: oklch(52% 0.18 205);
+
+  /* Icons tuned to teal accents */
+  --color-icon: #77c4c3;
+  --color-icon-hover: #168f86;
+
+  /* Keep border-hover consistent with primary ramp */
+  --color-border-hover: var(--color-primary-400);
+
+  --font-primary: Montserrat, sans-serif;
+  --font-points: "Saira Stencil One", sans-serif;
+  --font-number: "Saira Stencil One", sans-serif;
+  --font-title: "Rammetto One", sans-serif;
+
+  --shadow-shadow:
+    0 -2px 2px oklch(73.28% 0.101 235.64), 0 2px 2px oklch(73.28% 0.101 235.64);
+}
+
+@layer base {
+  * {
+    scrollbar-width: 1px;
+    scrollbar-color: oklch(29.41% 0.153 296.97) transparent;
+  }
+
+  * ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: oklch(29.41% 0.153 296.97);
+    border-radius: 50%;
+    border: 1px solid transparent;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    min-height: 100dvh;
+    scrollbar-width: thin;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  body {
+    min-height: 100%;
+    overflow-x: hidden;
+    font-family: Montserrat, sans-serif;
+  }
+
+  #page-loader {
+    height: 12px;
+    border-radius: 20px;
+    border: 1px solid;
+    position: relative;
+  }
+
+  #page-loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    animation: pageLoader 3s infinite;
+  }
+
+  @keyframes pageLoader {
+    100% {
+      inset: 0;
+    }
+  }
+  /* Add to your global CSS file */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@layer utilities {
+  /*  */
+}
